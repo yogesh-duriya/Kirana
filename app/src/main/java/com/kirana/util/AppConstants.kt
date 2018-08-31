@@ -4,7 +4,7 @@ object AppConstants {
 
     internal val APP_DB_NAME = "pixyrs.db"
     internal val PREF_NAME = "pixyrs_pref"
-    internal val SEED_DATABASE_QUESTIONS = " seed/questions.json"
+    internal val SEED_DATABASE_QUESTIONS = "seed/questions.json"
     internal val SEED_DATABASE_OPTIONS = "seed/options.json"
     internal val EMPTY_EMAIL_ERROR = 1001
     internal val INVALID_EMAIL_ERROR = 1002

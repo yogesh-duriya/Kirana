@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color -->
+    <item android:drawable="@color/blue"/>
+
+
+    <!-- Logo at the center of the screen -->
+    <item
+        android:drawable="@drawable/ic_online_store"
+        android:gravity="center"
+        android:height="144dp"
+        android:width="144dp"/>
+
+</layer-list>

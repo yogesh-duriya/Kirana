@@ -21,7 +21,6 @@ class SplashPresenter<V : SplashMVPView, I : SplashMVPInteractor> @Inject intern
                 .subscribe({
                     getView()?.let { decideActivityToOpen() }
                 }))
-
     }
 
     private fun decideActivityToOpen() = getView()?.let {

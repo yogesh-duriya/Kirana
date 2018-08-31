@@ -1,8 +1,11 @@
 package com.kirana.ui.splash.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Window
 import com.kirana.R
 import com.kirana.ui.base.view.BaseActivity
+import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.splash.interactor.SplashMVPInteractor
 import com.kirana.ui.splash.presenter.SplashMVPPresenter
 import javax.inject.Inject
@@ -14,6 +17,7 @@ class SplashActivity : BaseActivity(), SplashMVPView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash)
         presenter.onAttach(this)
     }
@@ -41,9 +45,9 @@ class SplashActivity : BaseActivity(), SplashMVPView {
     }
 
     override fun openLoginActivity() {
-       /* val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish()*/
+        finish()
     }
 
     override fun onDestroy() {

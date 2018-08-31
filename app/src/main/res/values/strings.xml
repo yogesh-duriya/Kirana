@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_header_title">LOG IN WITH YOUR KIRANA ACCOUNT</string>
+    <string name="hint_email">name@example.com</string>
+    <string name="hint_password">Password</string>
+    <string name="login">LOG IN</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="register">REGISTER</string>
+    <string name="empty_email_error_message">Email cannot be blank</string>
+    <string name="invalid_email_error_message">Please Enter a valid email address</string>
+    <string name="empty_password_error_message">Password cannot be empty</string>
+    <string name="login_failure">Login failed</string>
+
 </resources>
