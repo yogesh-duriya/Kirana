@@ -15,7 +15,7 @@ class ApiHeader @Inject constructor(internal val publicApiHeader: PublicApiHeade
     class ProtectedApiHeader @Inject constructor(@Expose
                                                  @SerializedName("api_key") val apiKey: String,
                                                  @Expose
-                                                 @SerializedName("user_id") val userId: Long?,
+                                                 @SerializedName("user_id") val userId: String?,
                                                  @Expose
                                                  @SerializedName("access_token") val accessToken: String?)
 }

@@ -5,7 +5,7 @@ import io.reactivex.Observable
 
 interface ApiHelper {
 
-    fun performServerLogin(request: LoginRequest.ServerLoginRequest): Observable<LoginResponse>
+    fun performServerLogin(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>
 
     fun performFBLogin(request: LoginRequest.FacebookLoginRequest): Observable<LoginResponse>
 

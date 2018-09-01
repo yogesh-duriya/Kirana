@@ -4,8 +4,8 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class LoginResponse(@Expose
-                    @SerializedName("status_code")
-                    var statusCode: String? = null,
+                    @SerializedName("Status")
+                    var Status: String? = null,
 
                     @Expose
                     @SerializedName("user_id")
@@ -36,5 +36,9 @@ class LoginResponse(@Expose
                     var googleProfilePicUrl: String? = null,
 
                     @Expose
-                    @SerializedName("message")
-                    var message: String? = null)
+                    @SerializedName("AgentMainID")
+                    var AgentMainID: String? = null,
+
+                    @Expose
+                    @SerializedName("Message")
+                    var Message: String? = null)

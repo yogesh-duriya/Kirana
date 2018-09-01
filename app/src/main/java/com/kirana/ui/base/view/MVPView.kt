@@ -6,4 +6,6 @@ interface MVPView {
 
     fun hideProgress()
 
+    fun showToast(message : String?)
+
 }

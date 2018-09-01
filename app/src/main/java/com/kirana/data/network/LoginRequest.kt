@@ -6,9 +6,13 @@ import com.google.gson.annotations.SerializedName
 class LoginRequest {
 
     data class ServerLoginRequest internal constructor(@Expose
-                                                       @SerializedName("email") internal val email: String,
+                                                       @SerializedName("method") internal val method: String,
                                                        @Expose
-                                                       @SerializedName("password") internal val password: String)
+                                                       @SerializedName("userID") internal val userID: String,
+                                                       @Expose
+                                                       @SerializedName("password") internal val password: String,
+                                                       @Expose
+                                                       @SerializedName("MAC_ID") internal val MAC_ID: String)
 
     data class FacebookLoginRequest internal constructor(@Expose
                                                          @SerializedName("fb_user_id")

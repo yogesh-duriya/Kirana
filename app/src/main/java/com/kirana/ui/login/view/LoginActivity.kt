@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginMVPView {
 
-
     @Inject
     internal lateinit var presenter: LoginMVPPresenter<LoginMVPView, LoginMVPInteractor>
 
@@ -51,15 +50,16 @@ class LoginActivity : BaseActivity(), LoginMVPView {
     }
 
     override fun openMainActivity() {
-        Toast.makeText(this, "Login successfull", Toast.LENGTH_LONG ).show()
         /*val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()*/
+        showToast("Login successfull")
     }
+
 
     private fun setOnClickListeners() {
 
-        btn_server_login.setOnClickListener {presenter.onServerLoginClicked(et_email.text.toString(), et_password.text.toString()) }
+        btn_server_login.setOnClickListener {presenter.onServerLoginClicked("GetLoginDetails", et_email.text.toString(), et_password.text.toString(), "AC:C1:EE:63:59:49") }
 
     }
 

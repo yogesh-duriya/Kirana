@@ -34,17 +34,16 @@ class AppPreferenceHelper @Inject constructor(context: Context,
 
     override fun setAccessToken(accessToken: String?) = mPrefs.edit { putString(PREF_KEY_ACCESS_TOKEN, accessToken) }
 
-    override fun getCurrentUserId(): Long? {
-        val userId = mPrefs.getLong(PREF_KEY_CURRENT_USER_ID, AppConstants.NULL_INDEX)
+    override fun getCurrentUserId(): String? {
+        val userId = mPrefs.getString(PREF_KEY_CURRENT_USER_ID,"")
         return when (userId) {
-            AppConstants.NULL_INDEX -> null
             else -> userId
         }
     }
 
-    override fun setCurrentUserId(userId: Long?) {
-        val id = userId ?: AppConstants.NULL_INDEX
-        mPrefs.edit { putLong(PREF_KEY_CURRENT_USER_ID, id) }
+    override fun setCurrentUserId(userId: String?) {
+        val id = userId
+        mPrefs.edit { putString(PREF_KEY_CURRENT_USER_ID, id) }
     }
 
     override fun setCurrentUserLoggedInMode(mode: AppConstants.LoggedInMode) {

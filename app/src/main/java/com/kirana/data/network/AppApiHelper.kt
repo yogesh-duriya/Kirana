@@ -6,12 +6,18 @@ import javax.inject.Inject
 
 class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHelper {
 
-    override fun performServerLogin(request: LoginRequest.ServerLoginRequest): Observable<LoginResponse> =
+    override fun performServerLogin(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>{
+
+        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+
+       return requestInterface.agentLogin(method, email, password, MAC_ID)
+
+    } /*=
             Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_SERVER_LOGIN)
                     .addHeaders(apiHeader.publicApiHeader)
                     .addBodyParameter(request)
                     .build()
-                    .getObjectObservable(LoginResponse::class.java)
+                    .getObjectObservable(LoginResponse::class.java)*/
 
     override fun performFBLogin(request: LoginRequest.FacebookLoginRequest): Observable<LoginResponse> =
             Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_FACEBOOK_LOGIN)

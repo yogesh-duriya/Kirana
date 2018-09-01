@@ -6,6 +6,6 @@ import com.kirana.ui.login.view.LoginMVPView
 
 interface LoginMVPPresenter<V : LoginMVPView, I : LoginMVPInteractor> : MVPPresenter<V, I> {
 
-    fun onServerLoginClicked(email: String, password: String)
+    fun onServerLoginClicked(method: String, email: String, password: String, MAC_ID: String)
 
 }

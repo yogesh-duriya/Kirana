@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.kirana.util.CommonUtil
 import dagger.android.AndroidInjection
 
@@ -24,6 +25,10 @@ abstract class BaseActivity : AppCompatActivity(), MVPView, BaseFragment.CallBac
         hideProgress()
         progressDialog = CommonUtil.showLoadingDialog(this)
     }
+
+    override fun showToast(msg: String?) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG ).show()    }
+
 
     private fun performDI() = AndroidInjection.inject(this)
 

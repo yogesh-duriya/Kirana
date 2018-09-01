@@ -8,9 +8,9 @@ interface PreferenceHelper {
 
     fun setCurrentUserLoggedInMode(mode: AppConstants.LoggedInMode)
 
-    fun getCurrentUserId(): Long?
+    fun getCurrentUserId(): String?
 
-    fun setCurrentUserId(userId: Long?)
+    fun setCurrentUserId(userId: String?)
 
     fun getCurrentUserName(): String
 

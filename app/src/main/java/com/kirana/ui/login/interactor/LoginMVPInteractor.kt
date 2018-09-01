@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 interface LoginMVPInteractor : MVPInteractor {
 
-    fun doServerLoginApiCall(email: String, password: String): Observable<LoginResponse>
+    fun doServerLoginApiCall(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>
 
     fun updateUserInSharedPref(loginResponse: LoginResponse, loggedInMode: AppConstants.LoggedInMode)
 
