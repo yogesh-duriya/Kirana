@@ -10,6 +10,10 @@ object AppConstants {
     internal val INVALID_EMAIL_ERROR = 1002
     internal val EMPTY_PASSWORD_ERROR = 1003
     internal val LOGIN_FAILURE = 1004
+    internal val EMPTY_FIRST_NAME_ERROR = 1005
+    internal val EMPTY_SURNAME_ERROR = 1006
+    internal val EMPTY_MOBILE_ERROR = 1007
+    internal val REGISTER_FAILURE = 1008
     internal val NULL_INDEX = -1L
 
     enum class LoggedInMode constructor(val type: Int){

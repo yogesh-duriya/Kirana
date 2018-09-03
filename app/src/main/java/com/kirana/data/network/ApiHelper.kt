@@ -13,8 +13,10 @@ interface ApiHelper {
 
     fun performLogoutApiCall(): Observable<LogoutResponse>
 
-    fun getBlogApiCall(): io.reactivex.Observable<BlogResponse>
+    fun getBlogApiCall(): Observable<BlogResponse>
 
-    fun getOpenSourceApiCall(): io.reactivex.Observable<OpenSourceResponse>
+    fun getOpenSourceApiCall(): Observable<OpenSourceResponse>
+
+    fun performRegister(method: String, firstName: String, surname: String, email: String, mobile: String, password: String): Observable<LoginResponse>
 
 }

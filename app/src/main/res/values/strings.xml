@@ -6,12 +6,19 @@
     <string name="login_header_title">LOG IN WITH YOUR KIRANA ACCOUNT</string>
     <string name="hint_email">name@example.com</string>
     <string name="hint_password">Password</string>
+    <string name="hint_mobile">Mobile</string>
     <string name="login">LOG IN</string>
     <string name="forgot_password">FORGOT PASSWORD?</string>
     <string name="register">REGISTER</string>
     <string name="empty_email_error_message">Email cannot be blank</string>
     <string name="invalid_email_error_message">Please Enter a valid email address</string>
     <string name="empty_password_error_message">Password cannot be empty</string>
+    <string name="empty_first_name_error_message">First Name cannot be blank</string>
+    <string name="empty_surname_error_message">Surname cannot be blank</string>
+    <string name="empty_mobile_error_message">Mobile number cannot be blank</string>
     <string name="login_failure">Login failed</string>
+    <string name="register_failure">Register failed</string>
+    <string name="surname">Surname</string>
+    <string name="first_name">First Name</string>
 
 </resources>

@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.kirana.R
+import com.kirana.ui.Register.view.RegisterActivity
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.login.interactor.LoginMVPInteractor
 import com.kirana.ui.login.presenter.LoginMVPPresenter
 import com.kirana.util.AppConstants
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.app_bar.*
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginMVPView {
@@ -22,6 +24,9 @@ class LoginActivity : BaseActivity(), LoginMVPView {
         setContentView(R.layout.activity_login)
 
         presenter.onAttach(this)
+
+        setToolbar("Log in")
+
         setOnClickListeners()
 
     }
@@ -60,6 +65,8 @@ class LoginActivity : BaseActivity(), LoginMVPView {
     private fun setOnClickListeners() {
 
         btn_server_login.setOnClickListener {presenter.onServerLoginClicked("GetLoginDetails", et_email.text.toString(), et_password.text.toString(), "AC:C1:EE:63:59:49") }
+        tv_register_nav.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
+        tv_forgot_password.setOnClickListener { showToast("Forgot Password") }
 
     }
 

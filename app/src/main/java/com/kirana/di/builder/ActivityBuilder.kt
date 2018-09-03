@@ -1,5 +1,7 @@
 package com.kirana.di.builder
 
+import com.kirana.ui.Register.RegisterActivityModule
+import com.kirana.ui.Register.view.RegisterActivity
 import com.kirana.ui.login.LoginActivityModule
 import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.splash.SplashActivityModule
@@ -15,6 +17,9 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [(LoginActivityModule::class)])
     abstract fun bindLoginActivity(): LoginActivity
+
+    @ContributesAndroidInjector(modules = [(RegisterActivityModule::class)])
+    abstract fun bindRegisterActivity(): RegisterActivity
 
 
 }

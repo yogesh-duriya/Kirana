@@ -9,7 +9,6 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
     override fun performServerLogin(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>{
 
         val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
-
        return requestInterface.agentLogin(method, email, password, MAC_ID)
 
     } /*=
@@ -18,6 +17,13 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
                     .addBodyParameter(request)
                     .build()
                     .getObjectObservable(LoginResponse::class.java)*/
+
+    override fun performRegister(method: String, firstName: String, surname: String, email: String, mobile: String, password: String): Observable<LoginResponse> {
+
+        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        return requestInterface.register(method, firstName, surname, email, mobile, password)
+
+    }
 
     override fun performFBLogin(request: LoginRequest.FacebookLoginRequest): Observable<LoginResponse> =
             Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_FACEBOOK_LOGIN)

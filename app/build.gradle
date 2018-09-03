@@ -50,7 +50,6 @@ dependencies {
     implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
     implementation "com.android.support:animated-vector-drawable:$rootProject.supportLibraryVersion"
 
-
     // dependency injection
     implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
     kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
