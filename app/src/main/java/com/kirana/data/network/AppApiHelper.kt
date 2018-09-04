@@ -25,6 +25,11 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
 
     }
 
+    override fun getShopApiCall(): Observable<ShopResponse> {
+        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        return requestInterface.getShops("getShops")
+    }
+
     override fun performFBLogin(request: LoginRequest.FacebookLoginRequest): Observable<LoginResponse> =
             Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_FACEBOOK_LOGIN)
                     .addHeaders(apiHeader.publicApiHeader)

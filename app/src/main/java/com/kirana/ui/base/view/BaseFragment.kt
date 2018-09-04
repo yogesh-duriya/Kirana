@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.kirana.R
 import com.kirana.util.CommonUtil
@@ -59,5 +60,9 @@ abstract class BaseFragment : Fragment(),  MVPView {
     }
 
     abstract fun setUp()
+
+    override fun showToast(msg: String?) {
+        Toast.makeText(this.context, msg, Toast.LENGTH_LONG ).show()    }
+
 
 }

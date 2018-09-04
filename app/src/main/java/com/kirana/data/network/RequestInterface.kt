@@ -17,4 +17,8 @@ interface RequestInterface {
     @POST(".")
     abstract fun register(@Field("Method") method: String, @Field("First_name") First_name: String, @Field("Surname") Surname: String, @Field("Email") Email: String, @Field("Mobile") Mobile: String, @Field("Password") Password: String): Observable<LoginResponse>
 
+    @FormUrlEncoded
+    @POST(".")
+    abstract fun getShops(@Field("Method") method: String): Observable<ShopResponse>
+
 }

@@ -9,6 +9,7 @@ import com.kirana.ui.Register.view.RegisterActivity
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.login.interactor.LoginMVPInteractor
 import com.kirana.ui.login.presenter.LoginMVPPresenter
+import com.kirana.ui.main.view.MainActivity
 import com.kirana.util.AppConstants
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.app_bar.*
@@ -55,9 +56,9 @@ class LoginActivity : BaseActivity(), LoginMVPView {
     }
 
     override fun openMainActivity() {
-        /*val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish()*/
+        finish()
         showToast("Login successfull")
     }
 

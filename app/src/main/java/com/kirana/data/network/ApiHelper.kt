@@ -19,4 +19,6 @@ interface ApiHelper {
 
     fun performRegister(method: String, firstName: String, surname: String, email: String, mobile: String, password: String): Observable<LoginResponse>
 
+    fun getShopApiCall() : Observable<ShopResponse>
+
 }

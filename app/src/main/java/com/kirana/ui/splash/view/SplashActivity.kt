@@ -6,6 +6,7 @@ import android.view.Window
 import com.kirana.R
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.login.view.LoginActivity
+import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.splash.interactor.SplashMVPInteractor
 import com.kirana.ui.splash.presenter.SplashMVPPresenter
 import javax.inject.Inject
@@ -39,9 +40,9 @@ class SplashActivity : BaseActivity(), SplashMVPView {
     }
 
     override fun openMainActivity() {
-        /*val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish()*/
+        finish()
     }
 
     override fun openLoginActivity() {

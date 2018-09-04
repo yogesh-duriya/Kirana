@@ -2,7 +2,7 @@
     <string name="app_name">Kirana</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Home blank fragment</string>
     <string name="login_header_title">LOG IN WITH YOUR KIRANA ACCOUNT</string>
     <string name="hint_email">name@example.com</string>
     <string name="hint_password">Password</string>
