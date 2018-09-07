@@ -23,4 +23,8 @@ interface PreferenceHelper {
     fun getAccessToken(): String?
 
     fun setAccessToken(accessToken: String?)
+
+    fun getFirstTime(): String
+
+    fun setFirstTime(userName: String?)
 }

@@ -1,8 +1,9 @@
-package com.kirana.ui.main.home.view
+package com.kirana.ui.main.category.view
 
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import android.widget.ImageView
 import com.kirana.R
 import com.kirana.data.network.Shop
 import com.kirana.ui.base.view.BaseFragment
+import com.kirana.ui.main.MainPagerAdapter
 import com.kirana.ui.main.home.SliderPagerAdapter
 import com.kirana.ui.main.home.interactor.HomeMVPInteractor
 import com.kirana.ui.main.home.presenter.HomeMVPPresenter
@@ -20,14 +22,17 @@ import javax.inject.Inject
 import android.widget.LinearLayout
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
+import com.kirana.ui.main.home.view.AllShopAdapter
+import com.kirana.ui.main.home.view.HomeMVPView
+import com.kirana.ui.main.home.view.ShopAdapter
 
 
-class HomeFragment : BaseFragment(), HomeMVPView {
+class CategoryFragment : BaseFragment(), HomeMVPView {
 
     companion object {
         //@JvmStatic
-        fun newInstance(): HomeFragment {
-            return HomeFragment()
+        fun newInstance(): CategoryFragment {
+            return CategoryFragment()
         }
     }
 

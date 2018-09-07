@@ -5,6 +5,7 @@ import com.kirana.ui.main.home.interactor.HomeInteractor
 import com.kirana.ui.main.home.interactor.HomeMVPInteractor
 import com.kirana.ui.main.home.presenter.HomeMVPPresenter
 import com.kirana.ui.main.home.presenter.HomePresenter
+import com.kirana.ui.main.home.view.AllShopAdapter
 import com.kirana.ui.main.home.view.HomeFragment
 import com.kirana.ui.main.home.view.HomeMVPView
 import com.kirana.ui.main.home.view.ShopAdapter
@@ -23,6 +24,9 @@ class HomeFragmentModule {
 
     @Provides
     internal fun provideShopAdapter(): ShopAdapter = ShopAdapter(ArrayList())
+
+    @Provides
+    internal fun provideAllShopAdapter(): AllShopAdapter = AllShopAdapter(ArrayList())
 
     @Provides
     internal fun provideLinearLayoutManager(fragment: HomeFragment): LinearLayoutManager = LinearLayoutManager(fragment.activity)

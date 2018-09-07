@@ -16,6 +16,7 @@ class AppPreferenceHelper @Inject constructor(context: Context,
         private val PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN"
         private val PREF_KEY_CURRENT_USER_NAME = "PREF_KEY_CURRENT_USER_NAME"
         private val PREF_KEY_CURRENT_USER_EMAIL = "PREF_KEY_CURRENT_USER_EMAIL"
+        private val PREF_KEY_FIRST_TIME = "PREF_KEY_FIRST_TIME"
     }
 
     private val mPrefs: SharedPreferences = context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE)
@@ -49,4 +50,9 @@ class AppPreferenceHelper @Inject constructor(context: Context,
     override fun setCurrentUserLoggedInMode(mode: AppConstants.LoggedInMode) {
         mPrefs.edit { putInt(PREF_KEY_USER_LOGGED_IN_MODE, mode.type) }
     }
+
+    override fun getFirstTime(): String = mPrefs.getString(PREF_KEY_FIRST_TIME, "0")
+
+    override fun setFirstTime(fistTime: String?) = mPrefs.edit { putString(PREF_KEY_FIRST_TIME, fistTime) }
+
 }

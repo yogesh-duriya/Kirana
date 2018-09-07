@@ -16,6 +16,8 @@ open class BaseInteractor() : MVPInteractor {
 
     override fun isUserLoggedIn() = this.preferenceHelper.getCurrentUserLoggedInMode() != AppConstants.LoggedInMode.LOGGED_IN_MODE_LOGGED_OUT.type
 
+    override fun isFirstTime() = this.preferenceHelper.getFirstTime()
+
     override fun performUserLogout() = preferenceHelper.let {
         it.setCurrentUserId(null)
         it.setAccessToken(null)

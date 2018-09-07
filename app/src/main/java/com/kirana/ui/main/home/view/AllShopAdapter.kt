@@ -11,7 +11,7 @@ import com.kirana.data.network.Shop
 import com.kirana.util.extension.loadImage
 import kotlinx.android.synthetic.main.shop_row.view.*
 
-class ShopAdapter(private val shopListItems: MutableList<Shop>) : RecyclerView.Adapter<ShopAdapter.ShopViewHolder>() {
+class AllShopAdapter(private val shopListItems: MutableList<Shop>) : RecyclerView.Adapter<AllShopAdapter.ShopViewHolder>() {
 
     override fun getItemCount() = this.shopListItems.size
 
@@ -21,7 +21,7 @@ class ShopAdapter(private val shopListItems: MutableList<Shop>) : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-                ShopViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_blog_list , parent, false))
+                ShopViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.shop_row , parent, false))
 
 
     internal fun addShopsToList(shops: List<Shop>){

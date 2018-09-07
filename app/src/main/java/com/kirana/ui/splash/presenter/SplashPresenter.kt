@@ -24,10 +24,14 @@ class SplashPresenter<V : SplashMVPView, I : SplashMVPInteractor> @Inject intern
     }
 
     private fun decideActivityToOpen() = getView()?.let {
-        if (isUserLoggedIn())
-            it.openMainActivity()
-        else
-            it.openLoginActivity()
+
+        if (interactor!!.isFirstTime().equals("1")) {
+            if (isUserLoggedIn())
+                it.openMainActivity()
+            else
+                it.openLoginActivity()
+        }else
+            it.openWelcomeActivity()
     }
 
     private fun isUserLoggedIn(): Boolean {

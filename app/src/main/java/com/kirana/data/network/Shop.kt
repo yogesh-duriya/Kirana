@@ -29,5 +29,9 @@ data class Shop(@Expose
 
                 @Expose
                  @SerializedName("categories")
-                 var Categories: String? = null
+                 var Categories: String? = null,
+
+                @Expose
+                @SerializedName("promo")
+                var promo: String? = null
 )

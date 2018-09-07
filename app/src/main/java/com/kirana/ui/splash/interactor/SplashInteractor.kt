@@ -24,9 +24,7 @@ class SplashInteractor @Inject constructor(private val mContex: Context, private
             if (isEmpty){
                 val type = `$Gson$Types`.newParameterizedTypeWithOwner(null, List::class.java, Question::class.java)
                 val questionList = gson.fromJson<List<Question>>(
-                        FileUtils.loadJSONFromAsset(
-                                mContex,
-                                AppConstants.SEED_DATABASE_QUESTIONS),
+                        FileUtils.loadJSONFromAsset(mContex, AppConstants.SEED_DATABASE_QUESTIONS),
                         type)
                 questionRepoHelper.insertQuestions(questionList)
             }else

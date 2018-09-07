@@ -8,6 +8,8 @@ import com.kirana.ui.main.home.HomeFragmentProvider
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.splash.SplashActivityModule
 import com.kirana.ui.splash.view.SplashActivity
+import com.kirana.ui.welcome.WelcomeActivityModule
+import com.kirana.ui.welcome.view.WelcomeActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -26,5 +28,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class)])
     abstract fun bindMainActivity(): MainActivity
 
+    @ContributesAndroidInjector(modules = [(WelcomeActivityModule::class)])
+    abstract fun bindWelcomeActivity(): WelcomeActivity
 
 }

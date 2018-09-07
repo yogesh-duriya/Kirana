@@ -37,11 +37,13 @@ class LoginPresenter<V : LoginMVPView,
                             .subscribeOn(Schedulers.io())
                             .subscribe(
                                     { loginResponse ->
+                                        getView()?.hideProgress()
                                         if (loginResponse.Status.equals("1")) {
                                             updateUserInSharedPref(loginResponse = loginResponse,
                                                     loggedInMode = AppConstants.LoggedInMode.LOGGED_IN_MODE_SERVER)
                                             getView()?.openMainActivity()
                                         }else{
+                                            getView()?.hideProgress()
                                             getView()?.showToast(loginResponse.Message)
                                         }
                                         Log.d("login response :" , loginResponse.Status)

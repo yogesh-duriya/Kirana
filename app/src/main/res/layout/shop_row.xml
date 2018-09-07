@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:paddingBottom="20dp">
+
+
+        <ImageView
+            android:id="@+id/coverImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            tools:src="@drawable/shop_banner" />
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            style="@style/TextStyle.Heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            tools:text="Android MVP Architecture" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cat_1"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text="Tea" />
+
+            <TextView
+                android:id="@+id/tv_cat_2"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text=" * Suger" />
+
+            <TextView
+                android:id="@+id/tv_cat_3"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text=" * Rice" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/box_grey"
+                android:padding="5dp"
+                android:textSize="12sp"
+                tools:text="10-20 MINS" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/box_grey"
+                android:padding="4dp"
+                android:textSize="12sp"
+                tools:text="4.5 * (500+)" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_promo"
+            style="@style/TextStyle.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            tools:text=""
+            android:visibility="visible"/>
+</LinearLayout>

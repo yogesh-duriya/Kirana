@@ -9,9 +9,11 @@ import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.splash.interactor.SplashMVPInteractor
 import com.kirana.ui.splash.presenter.SplashMVPPresenter
+import com.kirana.ui.welcome.view.WelcomeActivity
 import javax.inject.Inject
 
 class SplashActivity : BaseActivity(), SplashMVPView {
+
 
     @Inject
     lateinit var presenter: SplashMVPPresenter<SplashMVPView, SplashMVPInteractor>
@@ -47,6 +49,12 @@ class SplashActivity : BaseActivity(), SplashMVPView {
 
     override fun openLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun openWelcomeActivity() {
+        val intent = Intent(this, WelcomeActivity::class.java)
         startActivity(intent)
         finish()
     }

@@ -8,4 +8,5 @@ interface SplashMVPView : MVPView {
     fun showErrorToast()
     fun openMainActivity()
     fun openLoginActivity()
+    fun openWelcomeActivity()
 }

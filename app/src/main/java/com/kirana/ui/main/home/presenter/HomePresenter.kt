@@ -10,7 +10,7 @@ import javax.inject.Inject
 class HomePresenter<V : HomeMVPView, I : HomeMVPInteractor> @Inject constructor(interactor: I, schedulerProvider: SchedulerProvider, compositeDisposable: CompositeDisposable) : BasePresenter<V, I>(interactor = interactor, schedulerProvider = schedulerProvider, compositeDisposable =  compositeDisposable), HomeMVPPresenter<V, I> {
 
     override fun onViewPrepared() {
-        /*getView()?.showProgress()
+        getView()?.showProgress()
         interactor?.let {
             it.getShopList()
                     .compose(schedulerProvider.ioToMainObservableScheduler())
@@ -21,7 +21,7 @@ class HomePresenter<V : HomeMVPView, I : HomeMVPInteractor> @Inject constructor(
                             it.displayShopList(shopResponse.data)
                         }
                     }
-        }*/
+        }
     }
 
 }
