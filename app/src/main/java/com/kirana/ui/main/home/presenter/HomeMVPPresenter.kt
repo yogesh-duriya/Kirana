@@ -7,4 +7,5 @@ import com.kirana.ui.main.home.view.HomeMVPView
 interface HomeMVPPresenter<V: HomeMVPView, I : HomeMVPInteractor> : MVPPresenter<V, I> {
 
     fun onViewPrepared()
+
 }

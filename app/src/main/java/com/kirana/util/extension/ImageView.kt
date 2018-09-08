@@ -12,3 +12,4 @@ internal fun ImageView.loadImage(url: String){
             .centerCrop()
             .into(this)
 }
+

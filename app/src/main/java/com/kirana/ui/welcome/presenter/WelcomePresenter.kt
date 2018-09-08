@@ -13,10 +13,15 @@ import javax.inject.Inject
 class WelcomePresenter<V : SplashMVPView, I : WelcomeMVPInteractor> @Inject internal constructor(interactor : I, schedulerProvider: SchedulerProvider, disposable: CompositeDisposable) : BasePresenter<V, I>(interactor = interactor, schedulerProvider = schedulerProvider, compositeDisposable = disposable), WelcomeMVPPresenter<V, I> {
 
     override fun decideActivityToOpen()  {
+
+        if (interactor?.isFirstTime().equals("0"))
+            interactor?.performFirstTime()
+
         if (isUserLoggedIn())
             getView()?.openMainActivity()
         else
             getView()?.openLoginActivity()
+
     }
 
     private fun isUserLoggedIn(): Boolean {

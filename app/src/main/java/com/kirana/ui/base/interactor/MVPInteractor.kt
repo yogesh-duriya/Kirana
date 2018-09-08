@@ -7,4 +7,6 @@ interface MVPInteractor {
     fun isFirstTime(): String
 
     fun performUserLogout()
+
+    fun performFirstTime()
 }

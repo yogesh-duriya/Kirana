@@ -6,6 +6,7 @@ import com.kirana.util.AppConstants
 
 open class BaseInteractor() : MVPInteractor {
 
+
     protected lateinit var preferenceHelper: PreferenceHelper
     protected lateinit var apiHelper: ApiHelper
 
@@ -23,6 +24,10 @@ open class BaseInteractor() : MVPInteractor {
         it.setAccessToken(null)
         it.setCurrentUserEmail(null)
         it.setCurrentUserLoggedInMode(AppConstants.LoggedInMode.LOGGED_IN_MODE_LOGGED_OUT)
+    }
+
+    override fun performFirstTime() = preferenceHelper.let {
+        it.setFirstTime("1")
     }
 
 

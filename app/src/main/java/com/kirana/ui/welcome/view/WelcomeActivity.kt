@@ -4,9 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.text.Html
@@ -16,6 +14,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
 import com.kirana.R
+import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.splash.view.SplashMVPView
@@ -24,7 +23,8 @@ import com.kirana.ui.welcome.presenter.WelcomeMVPPresenter
 import kotlinx.android.synthetic.main.activity_welcome.*
 import javax.inject.Inject
 
-class WelcomeActivity : AppCompatActivity(), SplashMVPView {
+class WelcomeActivity : BaseActivity(), SplashMVPView {
+
 
     @Inject
     lateinit var presenter: WelcomeMVPPresenter<SplashMVPView, WelcomeMVPInteractor>
@@ -66,7 +66,7 @@ class WelcomeActivity : AppCompatActivity(), SplashMVPView {
         view_pager.setAdapter(myViewPagerAdapter)
         view_pager.addOnPageChangeListener(viewPagerPageChangeListener)
 
-        btn_skip.setOnClickListener { openLoginActivity() }
+        btn_skip.setOnClickListener { presenter.decideActivityToOpen() }
 
         btn_next.setOnClickListener {
             // checking for last page
@@ -76,7 +76,7 @@ class WelcomeActivity : AppCompatActivity(), SplashMVPView {
                 // move to next screen
                 view_pager.setCurrentItem(current)
             } else {
-                openLoginActivity()
+                presenter.decideActivityToOpen()
             }
         }
     }
@@ -162,20 +162,13 @@ class WelcomeActivity : AppCompatActivity(), SplashMVPView {
         finish()
     }
 
-    override fun showProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onFragmentAttached() {
     }
 
-    override fun hideProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun showToast(message: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onFragmentDetached(tag: String) {
     }
 
     override fun openWelcomeActivity() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 

@@ -4,6 +4,7 @@ import com.kirana.ui.Register.RegisterActivityModule
 import com.kirana.ui.Register.view.RegisterActivity
 import com.kirana.ui.login.LoginActivityModule
 import com.kirana.ui.login.view.LoginActivity
+import com.kirana.ui.main.category.CategoryFragmentProvider
 import com.kirana.ui.main.home.HomeFragmentProvider
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.splash.SplashActivityModule
@@ -25,10 +26,11 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(RegisterActivityModule::class)])
     abstract fun bindRegisterActivity(): RegisterActivity
 
-    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class)])
-    abstract fun bindMainActivity(): MainActivity
-
     @ContributesAndroidInjector(modules = [(WelcomeActivityModule::class)])
     abstract fun bindWelcomeActivity(): WelcomeActivity
+
+    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class)])
+    abstract fun bindMainActivity(): MainActivity
+
 
 }

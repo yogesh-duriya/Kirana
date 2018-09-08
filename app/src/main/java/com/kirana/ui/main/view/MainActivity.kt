@@ -57,5 +57,10 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         })
     }
 
+    override fun onResume() {
+        //supportFragmentInjector()
+        super.onResume()
+    }
+
 
 }
