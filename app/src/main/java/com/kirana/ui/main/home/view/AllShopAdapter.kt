@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.kirana.R
 import com.kirana.data.network.Shop
+import com.kirana.ui.productList.view.ProductListActivity
+import com.kirana.ui.shop.view.ShopActivity
 import com.kirana.util.extension.loadImage
 import kotlinx.android.synthetic.main.shop_row.view.*
 
@@ -41,21 +43,24 @@ class AllShopAdapter(private val shopListItems: MutableList<Shop>) : RecyclerVie
 
             val (shopName, shopId, shopImage, shopRating, deliveryTime, noRaters, Categories, promo) = shopListItems[position]
             inflateData(shopName, shopId, shopImage, shopRating + " " + noRaters, deliveryTime,  Categories, promo)
-            //setItemClickListener(blogUrl)
+            setItemClickListener(shopId, shopName)
         }
 
-        private fun setItemClickListener(blogUrl: String?){
+        private fun setItemClickListener(id: String?, name: String?){
             itemView.setOnClickListener {
-                blogUrl?.let {
+                name?.let {
                     try {
-                        val intent = Intent()
+                        itemView.context.startActivity(Intent(itemView.context, ShopActivity::class.java)
+                                .putExtra("ID", id)
+                                .putExtra("NAME", name))
+                        /*val intent = Intent()
                         // using "with" as an example
                         with(intent){
                             action = Intent.ACTION_VIEW
                             data = Uri.parse(it)
                             addCategory(Intent.CATEGORY_BROWSABLE)
                         }
-                        itemView.context.startActivity(intent)
+                        itemView.context.startActivity(intent)*/
                     }catch (e: Exception){
 
                     }

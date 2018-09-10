@@ -7,6 +7,8 @@ import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.main.category.CategoryFragmentProvider
 import com.kirana.ui.main.home.HomeFragmentProvider
 import com.kirana.ui.main.view.MainActivity
+import com.kirana.ui.productList.ProductListActivityModule
+import com.kirana.ui.productList.view.ProductListActivity
 import com.kirana.ui.splash.SplashActivityModule
 import com.kirana.ui.splash.view.SplashActivity
 import com.kirana.ui.welcome.WelcomeActivityModule
@@ -31,6 +33,9 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class)])
     abstract fun bindMainActivity(): MainActivity
+
+    @ContributesAndroidInjector(modules = [(ProductListActivityModule::class)])
+    abstract fun bindProductListActivity(): ProductListActivity
 
 
 }
