@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.profile.view.ProfileFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YOUR FAVOURITES"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_favorite_black_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAYMENT"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_credit_card_black_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HELP"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_help_gray_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TELL YOUR FRIENDS"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_share_gray_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PROMOTIONS"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_promotion_gray_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SETTINGS"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_person_gray_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Give your friends RS.50"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@color/light_gray"
+        android:drawableLeft="@drawable/ic_share_gray_24dp"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:padding="10dp"/>
+
+
+
+
+</LinearLayout>

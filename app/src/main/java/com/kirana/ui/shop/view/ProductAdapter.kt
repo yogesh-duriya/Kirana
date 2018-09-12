@@ -1,5 +1,6 @@
-package com.kirana.ui.productList.view
+package com.kirana.ui.shop.view
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.kirana.R
 import com.kirana.data.network.Product
-import kotlinx.android.synthetic.main.item_category_list.view.*
+import com.kirana.ui.ProductDetail.view.ProductDetailActivity
+import kotlinx.android.synthetic.main.item_product.view.*
 
-class ProductListAdapter (private val categoryListItems: MutableList<Product>) : RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
+class ProductAdapter (private val categoryListItems: MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     override fun getItemCount() = this.categoryListItems.size
 
@@ -19,10 +21,10 @@ class ProductListAdapter (private val categoryListItems: MutableList<Product>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_category_list, parent, false))
+            ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_product, parent, false))
 
 
-    internal fun addCategoryToList(category: List<Product>) {
+    internal fun addProductToList(category: List<Product>) {
         this.categoryListItems.addAll(category)
         notifyDataSetChanged()
     }
@@ -31,13 +33,13 @@ class ProductListAdapter (private val categoryListItems: MutableList<Product>) :
 
         fun clear() {
             //itemView.iv_cat.setImageDrawable(null)
-            itemView.tv_category.text = ""
+            itemView.tv_name.text = ""
         }
 
         fun onBind(position: Int) {
 
-            val (name, id, image) = categoryListItems[position]
-            inflateData(name, id, image)
+            val (name, id, image, rating, raters, price, offer) = categoryListItems[position]
+            inflateData(name, id, image, rating, raters, price, offer)
             setItemClickListener(name)
         }
 
@@ -46,6 +48,7 @@ class ProductListAdapter (private val categoryListItems: MutableList<Product>) :
                 name?.let {
                     try {
                         Toast.makeText(itemView.context, name, Toast.LENGTH_SHORT).show()
+                        itemView.context.startActivity(Intent(itemView.context, ProductDetailActivity::class.java))
                         //val intent = Intent()
                         // using "with" as an example
                         /*with(intent) {
@@ -67,8 +70,12 @@ class ProductListAdapter (private val categoryListItems: MutableList<Product>) :
             }
         }
 
-        private fun inflateData(name: String?, id: String?, image: String?) {
-            name?.let { itemView.tv_category.text = it }
+        private fun inflateData(name: String?, id: String?, image: String?, rating: String?, raters: String?, price: String?, offer: String?) {
+            name?.let { itemView.tv_name.text = it }
+            rating?.let { itemView.tv_rating.text = it }
+            "("+raters+")"?.let { itemView.tv_no_raters.text = it }
+            "Rs."+price?.let { itemView.tv_price.text = it }
+            offer+"% off"?.let { itemView.tv_offer.text = it }
             //id?.let { itemView.tv_rating.text = it }
             //image.let{itemView.iv_cat.setImageResource(it)}
 

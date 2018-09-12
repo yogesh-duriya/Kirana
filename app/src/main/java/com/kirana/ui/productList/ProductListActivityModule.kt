@@ -1,17 +1,12 @@
 package com.kirana.ui.productList
 
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
-import com.kirana.ui.main.category.view.CategoryAdapter
-import com.kirana.ui.main.category.view.CategoryFragment
 import com.kirana.ui.main.home.view.AllShopAdapter
-import com.kirana.ui.main.home.view.ShopAdapter
 import com.kirana.ui.productList.interactor.ProductListInteractor
 import com.kirana.ui.productList.interactor.ProductListMVPInteractor
 import com.kirana.ui.productList.presenter.ProductListMVPPresenter
 import com.kirana.ui.productList.presenter.ProductListPresenter
 import com.kirana.ui.productList.view.ProductListActivity
-import com.kirana.ui.productList.view.ProductListAdapter
 import com.kirana.ui.productList.view.ProductListMVPView
 import dagger.Module
 import dagger.Provides
