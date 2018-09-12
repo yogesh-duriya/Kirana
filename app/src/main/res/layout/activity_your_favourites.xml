@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.yourFavourites.view.YourFavouritesActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/app_bar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/shadow"
+        android:layout_above="@+id/tv_remove_selected"/>
+
+    <TextView
+        android:id="@+id/tv_remove_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REMOVE SELECTED"
+        android:textColor="@color/red"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

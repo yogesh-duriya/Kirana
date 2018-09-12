@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import android.widget.Toast
 import com.kirana.R
 import com.kirana.util.CommonUtil
@@ -43,9 +44,18 @@ abstract class BaseActivity : AppCompatActivity(), MVPView, BaseFragment.CallBac
         supportActionBar?.setDisplayShowTitleEnabled(true)
     }
 
+    fun setMainActivityToolbar(title : String){
+        setSupportActionBar(toolbar)
+        /*supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)*/
+        supportActionBar?.setTitle(title)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
+
 
 }

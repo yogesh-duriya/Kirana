@@ -15,6 +15,8 @@ import com.kirana.ui.splash.SplashActivityModule
 import com.kirana.ui.splash.view.SplashActivity
 import com.kirana.ui.welcome.WelcomeActivityModule
 import com.kirana.ui.welcome.view.WelcomeActivity
+import com.kirana.ui.yourFavourites.YourFavouritesActivityModule
+import com.kirana.ui.yourFavourites.view.YourFavouritesActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -41,6 +43,9 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [(ShopActivityModule::class)])
     abstract fun bindShopActivity(): ShopActivity
+
+    @ContributesAndroidInjector(modules = [(YourFavouritesActivityModule::class)])
+    abstract fun bindYourFavouritesActivity(): YourFavouritesActivity
 
 
 }

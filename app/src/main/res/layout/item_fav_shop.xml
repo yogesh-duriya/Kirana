@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_shop_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/shop_banner"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/iv_shop_image">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_shop_name"
+                style="@style/TextStyle.Heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Chhabra's Pure Veg"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:layout_toLeftOf="@+id/rl_edit"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/TextStyle.Title.Sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    tools:text="10-20 MINS"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_lens_gray_24dp"
+                    android:visibility="visible"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cat_1"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text="Tea" />
+
+            <TextView
+                android:id="@+id/tv_cat_2"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text=" * Suger" />
+
+            <TextView
+                android:id="@+id/tv_cat_3"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/dark_gray"
+                android:textSize="10sp"
+                tools:text=" * Rice" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_total_orders"
+            style="@style/TextStyle.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            tools:text="1 Order"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_below="@+id/iv_shop_image"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

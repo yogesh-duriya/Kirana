@@ -14,8 +14,9 @@
     <color name="login_background">#F2F2F4</color>
     <color name="light_gray">#F5F5F5</color>
     <color name="green">#43A422</color>
-    <color name="shadow">#d0d8dc</color>
+    <color name="shadow">#d1eceded</color>
     <color name="semi_gray">#979797</color>
+    <color name="red">#f90101</color>
     <color name="bg_screen1">#f64c73</color>
     <color name="green_light">#43A047</color>
 

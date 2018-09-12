@@ -21,6 +21,7 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setMainActivityToolbar("ASAP : Mansarover Plaza")
         mainPagerAdapter = MainPagerAdapter(supportFragmentManager)
         setUpMainPagerAdapter()
 
@@ -46,13 +47,24 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         mainViewPager.offscreenPageLimit = tabLayout.tabCount
         mainViewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
 
             override fun onTabSelected(tab: TabLayout.Tab) {
                 mainViewPager.currentItem = tab.position
-
+                if (tab!!.position == 0)
+                    setMainActivityToolbar("ASAP : Mansarover Plaza")
+                else if (tab!!.position == 1)
+                    setMainActivityToolbar("Search In Shops")
+                else if (tab!!.position == 2)
+                    setMainActivityToolbar("Orders")
+                else if (tab!!.position == 3)
+                    setMainActivityToolbar("User Name")
             }
         })
     }

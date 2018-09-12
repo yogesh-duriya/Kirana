@@ -26,7 +26,7 @@ class LoginActivity : BaseActivity(), LoginMVPView {
 
         presenter.onAttach(this)
 
-        setToolbar("Log in")
+        setMainActivityToolbar("Log in")
 
         setOnClickListeners()
 

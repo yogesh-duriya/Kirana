@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ui.main.profile.view.ProfileFragment">
 
     <TextView
+        android:id="@+id/tv_fav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="YOUR FAVOURITES"
@@ -14,9 +16,12 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_favorite_black_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PAYMENT"
@@ -24,9 +29,11 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_credit_card_black_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile" />
 
     <TextView
+        android:id="@+id/tv_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="HELP"
@@ -34,9 +41,11 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_help_gray_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_tell_your_friend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TELL YOUR FRIENDS"
@@ -44,9 +53,11 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_share_gray_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_promotions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PROMOTIONS"
@@ -54,9 +65,11 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_promotion_gray_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SETTINGS"
@@ -64,9 +77,11 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_person_gray_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_give_your_friend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Give your friends RS.50"
@@ -75,17 +90,16 @@
         android:padding="10dp"
         android:background="@color/light_gray"
         android:drawableLeft="@drawable/ic_share_gray_24dp"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        style="@style/Button.Profile"/>
 
     <TextView
+        android:id="@+id/tv_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="About"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:padding="10dp"/>
-
-
-
 
 </LinearLayout>

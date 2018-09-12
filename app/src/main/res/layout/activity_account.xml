@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.account.view.AccountActivity"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/app_bar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_margin="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACCOUNT INFORMATION"
+                android:background="@drawable/squre_gray"
+                android:padding="15dp"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_first_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/til_sirname"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yogesh"
+                        android:hint="@string/first_name"
+                        android:textAppearance="@style/HintText"
+                        android:inputType="textPersonName"
+                        android:enabled="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_sirname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/til_first_name"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_surname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Duriya"
+                        android:hint="@string/surname"
+                        android:textAppearance="@style/HintText"
+                        android:inputType="textPersonName"
+                        android:enabled="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="EMAIL"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_first_name">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_email"
+                        android:text="duriyay@yahoo.com"
+                        android:textAppearance="@style/HintText"
+                        android:inputType="textEmailAddress"
+                        android:enabled="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_email">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tie_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_mobile"
+                        android:textAppearance="@style/HintText"
+                        android:inputType="number"
+                        android:text="9828076497"
+                        android:enabled="false"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_saved_places"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVED PLACES"
+                    android:background="@drawable/squre_gray"
+                    android:padding="15dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/til_mobile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVED PLACES"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_squre"
+                    android:padding="15dp"
+                    android:drawableLeft="@drawable/ic_home"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="gravity"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_saved_places"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVED PLACES"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_squre"
+                    android:padding="15dp"
+                    android:drawableLeft="@drawable/ic_work_gray_24dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="gravity"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_home"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_signout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign out"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_squre"
+                    android:padding="15dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="gravity"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_work"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
