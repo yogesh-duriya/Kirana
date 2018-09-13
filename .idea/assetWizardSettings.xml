@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_work_gray_24dp" />
-                            <entry key="sourceFile" value="E:\Designs\icon\list.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_round_done_button" />
+                            <entry key="sourceFile" value="E:\Designs\icon\round-done-button.svg" />
                           </map>
                         </option>
                       </PersistentState>

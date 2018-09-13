@@ -24,6 +24,11 @@
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
+    <string name="KEY_FIRST_NAME">1</string>
+    <string name="KEY_LAST_NAME">2</string>
+    <string name="KEY_EMAIL">3</string>
+    <string name="KEY_MOBILE">4</string>
+
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
 

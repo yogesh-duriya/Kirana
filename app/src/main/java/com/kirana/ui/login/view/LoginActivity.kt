@@ -1,7 +1,6 @@
 package com.kirana.ui.login.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.kirana.R
@@ -12,7 +11,6 @@ import com.kirana.ui.login.presenter.LoginMVPPresenter
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.util.AppConstants
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.app_bar.*
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginMVPView {

@@ -27,4 +27,20 @@ interface PreferenceHelper {
     fun getFirstTime(): String
 
     fun setFirstTime(userName: String?)
+
+    fun getFirstName(): String
+
+    fun setFirstName(userName: String?)
+
+    fun getLastName(): String
+
+    fun setLastName(userName: String?)
+
+    fun getMobileNo(): String
+
+    fun setMobileNo(userName: String?)
+
+    fun getUserInfo(): HashMap<Int, String>
+
+
 }

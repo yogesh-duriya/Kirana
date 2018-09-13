@@ -2,10 +2,13 @@ package com.kirana.di.builder
 
 import com.kirana.ui.Register.RegisterActivityModule
 import com.kirana.ui.Register.view.RegisterActivity
+import com.kirana.ui.account.AccountActivityModule
+import com.kirana.ui.account.view.AccountActivity
 import com.kirana.ui.login.LoginActivityModule
 import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.main.category.CategoryFragmentProvider
 import com.kirana.ui.main.home.HomeFragmentProvider
+import com.kirana.ui.main.orders.pastOrders.PastOrderFragmentProvider
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.productList.ProductListActivityModule
 import com.kirana.ui.productList.view.ProductListActivity
@@ -35,7 +38,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(WelcomeActivityModule::class)])
     abstract fun bindWelcomeActivity(): WelcomeActivity
 
-    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class)])
+    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class), (PastOrderFragmentProvider::class)])
     abstract fun bindMainActivity(): MainActivity
 
     @ContributesAndroidInjector(modules = [(ProductListActivityModule::class)])
@@ -47,5 +50,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(YourFavouritesActivityModule::class)])
     abstract fun bindYourFavouritesActivity(): YourFavouritesActivity
 
+    @ContributesAndroidInjector(modules = [(AccountActivityModule::class)])
+    abstract fun bindAccountActivity(): AccountActivity
 
 }
