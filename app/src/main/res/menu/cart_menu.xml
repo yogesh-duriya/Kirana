@@ -3,10 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_edit"
-        android:orderInCategory="100"
-        android:title="EDIT "
-        app:showAsAction="always"/>
-
-
+        android:id="@+id/ic_group"
+        android:icon="@drawable/actionbar_cart_icon"
+        android:title="cart"
+        app:showAsAction="always" />
 </menu>

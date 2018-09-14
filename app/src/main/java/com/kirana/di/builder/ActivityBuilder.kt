@@ -1,14 +1,19 @@
 package com.kirana.di.builder
 
+import com.kirana.ui.ProductDetail.ProductDetailActivityModule
+import com.kirana.ui.ProductDetail.view.ProductDetailActivity
 import com.kirana.ui.Register.RegisterActivityModule
 import com.kirana.ui.Register.view.RegisterActivity
 import com.kirana.ui.account.AccountActivityModule
 import com.kirana.ui.account.view.AccountActivity
+import com.kirana.ui.cart.CartActivityModule
+import com.kirana.ui.cart.view.CartActivity
 import com.kirana.ui.login.LoginActivityModule
 import com.kirana.ui.login.view.LoginActivity
 import com.kirana.ui.main.category.CategoryFragmentProvider
 import com.kirana.ui.main.home.HomeFragmentProvider
 import com.kirana.ui.main.orders.pastOrders.PastOrderFragmentProvider
+import com.kirana.ui.main.orders.viewReceipt.ViewReceiptDialogFragmentProvider
 import com.kirana.ui.main.view.MainActivity
 import com.kirana.ui.productList.ProductListActivityModule
 import com.kirana.ui.productList.view.ProductListActivity
@@ -38,7 +43,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(WelcomeActivityModule::class)])
     abstract fun bindWelcomeActivity(): WelcomeActivity
 
-    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class), (PastOrderFragmentProvider::class)])
+    @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class), (CategoryFragmentProvider::class), (PastOrderFragmentProvider::class), (ViewReceiptDialogFragmentProvider::class)])
     abstract fun bindMainActivity(): MainActivity
 
     @ContributesAndroidInjector(modules = [(ProductListActivityModule::class)])
@@ -52,5 +57,11 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [(AccountActivityModule::class)])
     abstract fun bindAccountActivity(): AccountActivity
+
+    @ContributesAndroidInjector(modules = [(ProductDetailActivityModule::class)])
+    abstract fun bindProductDetailActivity(): ProductDetailActivity
+
+    @ContributesAndroidInjector(modules = [(CartActivityModule::class)])
+    abstract fun bindCartActivity(): CartActivity
 
 }

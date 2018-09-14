@@ -6,6 +6,7 @@ import javax.inject.Inject
 
 class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHelper {
 
+
     override fun performServerLogin(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>{
 
         val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
@@ -28,6 +29,11 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
     override fun getShopApiCall(): Observable<ShopResponse> {
         val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
         return requestInterface.getShops("getShops")
+    }
+
+    override fun performAddToCart(method: String, user_id: String, product_id: String): Observable<LoginResponse> {
+        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        return requestInterface.agentLogin(method,"","","")
     }
 
     override fun performFBLogin(request: LoginRequest.FacebookLoginRequest): Observable<LoginResponse> =

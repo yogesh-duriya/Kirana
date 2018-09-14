@@ -1,20 +1,20 @@
 package com.kirana.ui.main.orders.pastOrders.view
 
 import android.content.Intent
+import android.support.v4.app.FragmentManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.kirana.R
 import com.kirana.data.network.Orders
-import com.kirana.ui.main.orders.viewReceipt.view.RateUsDialog
-import com.kirana.ui.productList.view.ProductListActivity
+import com.kirana.ui.main.orders.viewReceipt.view.ViewReceiptDialog
 import com.kirana.ui.shop.view.ShopActivity
 import kotlinx.android.synthetic.main.item_order_list.view.*
 
 class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
 
+    private lateinit var childFragmentManager: FragmentManager
     override fun getItemCount() = this.orderListItems.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.let {
@@ -26,8 +26,9 @@ class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerVi
             ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_order_list, parent, false))
 
 
-    internal fun addOrderToList(orders: List<Orders>) {
+    internal fun addOrderToList(orders: List<Orders>, childFragmentManager: FragmentManager) {
         this.orderListItems.addAll(orders)
+        this.childFragmentManager = childFragmentManager
         notifyDataSetChanged()
     }
 
@@ -57,9 +58,10 @@ class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerVi
                     println(e.printStackTrace())
                 }
             }
+
             itemView.tv_view_receipt.setOnClickListener {
-                RateUsDialog.newInstance().let {
-                    //it?.show(itemView.context.supportFragmentManager)
+                ViewReceiptDialog.newInstance().let {
+                    it?.show(childFragmentManager)
                 }
             }
         }

@@ -56,7 +56,7 @@ class PastOrderFragment : BaseFragment(), PastOrderMVPView{
 
     override fun displayOrders(list: List<Orders>?) = list.let {
         if (it != null) {
-            adapter.addOrderToList(it)
+            adapter.addOrderToList(it, childFragmentManager)
         }
     }
 

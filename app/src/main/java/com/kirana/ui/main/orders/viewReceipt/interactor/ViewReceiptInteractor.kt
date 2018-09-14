@@ -6,7 +6,7 @@ import com.kirana.ui.base.interactor.BaseInteractor
 import javax.inject.Inject
 
 
-class RateUsInteractor @Inject internal constructor(apiHelper: ApiHelper, preferenceHelper: PreferenceHelper) : BaseInteractor(apiHelper = apiHelper, preferenceHelper = preferenceHelper), RateUsMVPInterator {
+class ViewReceiptInteractor @Inject internal constructor(apiHelper: ApiHelper, preferenceHelper: PreferenceHelper) : BaseInteractor(apiHelper = apiHelper, preferenceHelper = preferenceHelper), ViewReceiptMVPInterator {
 
     override fun submitRating() {}
 }

@@ -40,5 +40,8 @@
 
     <string name="slide_4_title">World Travel</string>
     <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+    <string name="order_receipt">Order receipt</string>
+    <string name="close">CLOSE</string>
+    <string name="place_order">Place Order</string>
 
 </resources>

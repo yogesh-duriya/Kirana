@@ -29,7 +29,8 @@
         <activity android:name=".ui.ProductDetail.view.ProductDetailActivity" />
         <activity android:name=".ui.shop.view.ShopActivity" />
         <activity android:name=".ui.yourFavourites.view.YourFavouritesActivity" />
-        <activity android:name=".ui.account.view.AccountActivity"></activity>
+        <activity android:name=".ui.account.view.AccountActivity" />
+        <activity android:name=".ui.cart.view.CartActivity"></activity>
     </application>
 
 </manifest>

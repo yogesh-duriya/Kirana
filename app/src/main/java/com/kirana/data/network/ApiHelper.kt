@@ -21,4 +21,6 @@ interface ApiHelper {
 
     fun getShopApiCall() : Observable<ShopResponse>
 
+    fun performAddToCart(method: String, user_id: String, product_id: String): Observable<LoginResponse>
+
 }

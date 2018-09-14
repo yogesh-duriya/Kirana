@@ -1,8 +1,11 @@
 package com.kirana.ui.main.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
+import android.view.Menu
 import com.kirana.R
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.main.MainPagerAdapter
@@ -11,12 +14,18 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import com.kirana.util.CountDrawable
+import android.graphics.drawable.LayerDrawable
+import android.view.MenuItem
+import com.kirana.ui.cart.view.CartActivity
+
 
 class MainActivity : BaseActivity(), HasSupportFragmentInjector {
 
     @Inject
     internal lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
     internal lateinit var mainPagerAdapter: MainPagerAdapter
+    internal lateinit var menu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,9 +78,46 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         })
     }
 
-    override fun onResume() {
-        //supportFragmentInjector()
-        super.onResume()
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        getMenuInflater().inflate(R.menu.cart_menu, menu);
+        this.menu = menu!!
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        setCount(this, "50");
+
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        val id = item!!.getItemId()
+
+        //noinspection SimplifiableIfStatement
+        return if (id == R.id.ic_group) {
+            //val editMenuItem = menu.findItem(R.id.action_edit)
+            startActivity(Intent(this, CartActivity::class.java))
+            true
+        } else super.onOptionsItemSelected(item)
+    }
+
+    fun setCount(context: Context, count: String) {
+        val menuItem = menu.findItem(R.id.ic_group)
+        val icon = menuItem.getIcon() as LayerDrawable
+
+        val badge: CountDrawable
+
+        // Reuse drawable if possible
+        val reuse = icon.findDrawableByLayerId(R.id.ic_group_count)
+        if (reuse != null && reuse is CountDrawable) {
+            badge = reuse
+        } else {
+            badge = CountDrawable(context)
+        }
+
+        badge.setCount(count)
+        icon.mutate()
+        icon.setDrawableByLayerId(R.id.ic_group_count, badge)
     }
 
 

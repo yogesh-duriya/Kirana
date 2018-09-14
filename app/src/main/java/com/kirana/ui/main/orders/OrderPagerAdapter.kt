@@ -3,7 +3,6 @@ package com.kirana.ui.main.orders
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import com.kirana.ui.main.category.view.CategoryFragment
 import com.kirana.ui.main.orders.pastOrders.view.PastOrderFragment
 
 class OrderPagerAdapter (fragmetnManager: FragmentManager) : FragmentStatePagerAdapter(fragmetnManager) {
@@ -13,7 +12,7 @@ class OrderPagerAdapter (fragmetnManager: FragmentManager) : FragmentStatePagerA
     override fun getItem(position: Int): Fragment? {
         return when (position){
             0 -> PastOrderFragment.newInstance()
-            1 -> CategoryFragment.newInstance()
+            1 -> PastOrderFragment.newInstance()
             else -> null
         }
     }

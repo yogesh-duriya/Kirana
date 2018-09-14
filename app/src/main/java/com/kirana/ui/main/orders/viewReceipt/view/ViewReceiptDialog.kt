@@ -8,24 +8,24 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.kirana.R
 import com.kirana.ui.base.view.BaseDialogView
-import com.kirana.ui.main.orders.viewReceipt.interactor.RateUsMVPInterator
-import com.kirana.ui.main.orders.viewReceipt.presenter.RateUsMVPPresenter
+import com.kirana.ui.main.orders.viewReceipt.interactor.ViewReceiptMVPInterator
+import com.kirana.ui.main.orders.viewReceipt.presenter.ViewReceiptMVPPresenter
 import kotlinx.android.synthetic.main.dialogue_view_receipt.*
 import javax.inject.Inject
 
-class RateUsDialog : BaseDialogView(), ViewRecieptDialogMVPView {
+class ViewReceiptDialog : BaseDialogView(), ViewRecieptDialogMVPView {
 
     companion object {
-        fun newInstance(): RateUsDialog? {
-            return RateUsDialog()
+        fun newInstance(): ViewReceiptDialog? {
+            return ViewReceiptDialog()
         }
 
     }
 
     @Inject
-    internal lateinit var presenter: RateUsMVPPresenter<ViewRecieptDialogMVPView, RateUsMVPInterator>
+    internal lateinit var presenter: ViewReceiptMVPPresenter<ViewRecieptDialogMVPView, ViewReceiptMVPInterator>
 
-    private val TAG = "RateUsDialog"
+    private val TAG = "ViewReceiptDialog"
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -34,8 +34,8 @@ class RateUsDialog : BaseDialogView(), ViewRecieptDialogMVPView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.onAttach(this)
-        btnLater.setOnClickListener { presenter.onLaterOptionClicked() }
-        btnSubmit.setOnClickListener { presenter.onSubmitOptionClicked() }
+        tv_close.setOnClickListener { presenter.onLaterOptionClicked() }
+        //btnSubmit.setOnClickListener { presenter.onSubmitOptionClicked() }
     }
 
     override fun onDestroyView() {
