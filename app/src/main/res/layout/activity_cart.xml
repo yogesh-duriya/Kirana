@@ -274,7 +274,7 @@
             </RelativeLayout>
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_server_login"
+                android:id="@+id/btn_place_order"
                 style="@style/Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

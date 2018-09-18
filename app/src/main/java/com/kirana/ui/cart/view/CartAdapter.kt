@@ -48,17 +48,9 @@ class CartAdapter(private val shopListItems: MutableList<Shop>) : RecyclerView.A
             itemView.setOnClickListener {
                 name?.let {
                     try {
-                        itemView.context.startActivity(Intent(itemView.context, ShopActivity::class.java)
+                        /*itemView.context.startActivity(Intent(itemView.context, ShopActivity::class.java)
                                 .putExtra("ID", id)
-                                .putExtra("NAME", name))
-                        /*val intent = Intent()
-                        // using "with" as an example
-                        with(intent){
-                            action = Intent.ACTION_VIEW
-                            data = Uri.parse(it)
-                            addCategory(Intent.CATEGORY_BROWSABLE)
-                        }
-                        itemView.context.startActivity(intent)*/
+                                .putExtra("NAME", name))*/
                     }catch (e: Exception){
 
                     }

@@ -1,5 +1,6 @@
 package com.kirana.ui.cart.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import com.kirana.data.network.Shop
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.cart.interactor.CartMVPInteractor
 import com.kirana.ui.cart.presenter.CartMVPPresenter
+import com.kirana.ui.trackOrder.view.TrackOrderActivity
 import kotlinx.android.synthetic.main.activity_cart.*
 import javax.inject.Inject
 
@@ -43,6 +45,8 @@ class CartActivity : BaseActivity(), CartMVPView {
         recylerView.adapter = adapter
 
         presenter.onViewPrepared("getProducts", "1")
+
+        btn_place_order.setOnClickListener { startActivity(Intent( this, TrackOrderActivity::class.java) )}
     }
 
     override fun onFragmentAttached() {

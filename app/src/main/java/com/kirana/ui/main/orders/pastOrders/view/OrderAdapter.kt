@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import com.kirana.R
 import com.kirana.data.network.Orders
 import com.kirana.ui.main.orders.viewReceipt.view.ViewReceiptDialog
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.item_order_list.view.*
 class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
 
     private lateinit var childFragmentManager: FragmentManager
+    private var clickListener: AdapterView.OnItemClickListener? = null
     override fun getItemCount() = this.orderListItems.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.let {
@@ -32,7 +34,7 @@ class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerVi
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
 
         fun clear() {
             //itemView.iv_cat.setImageDrawable(null)
@@ -72,5 +74,10 @@ class OrderAdapter(private val orderListItems: MutableList<Orders>) : RecyclerVi
             //image.let{itemView.iv_cat.setImageResource(it)}
 
         }
+
+
     }
+
+
+
 }

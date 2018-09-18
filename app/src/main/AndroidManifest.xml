@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kirana">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,6 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCelpieCyUFEdKoaLjTf_DrfFcutIKqF7M" />
+
         <activity
             android:name=".ui.splash.view.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -30,7 +39,8 @@
         <activity android:name=".ui.shop.view.ShopActivity" />
         <activity android:name=".ui.yourFavourites.view.YourFavouritesActivity" />
         <activity android:name=".ui.account.view.AccountActivity" />
-        <activity android:name=".ui.cart.view.CartActivity"></activity>
+        <activity android:name=".ui.cart.view.CartActivity" />
+        <activity android:name=".ui.trackOrder.view.TrackOrderActivity"></activity>
     </application>
 
 </manifest>
