@@ -18,12 +18,14 @@ import com.kirana.util.CountDrawable
 import android.graphics.drawable.LayerDrawable
 import android.view.MenuItem
 import com.kirana.ui.cart.view.CartActivity
+import com.kirana.ui.deliveryDetails.view.DeliveryDetailsActivity
 
 
 class MainActivity : BaseActivity(), HasSupportFragmentInjector {
 
     @Inject
     internal lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+
     internal lateinit var mainPagerAdapter: MainPagerAdapter
     internal lateinit var menu: Menu
 
@@ -33,7 +35,12 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         setMainActivityToolbar("ASAP : Mansarover Plaza")
         mainPagerAdapter = MainPagerAdapter(supportFragmentManager)
         setUpMainPagerAdapter()
+        setListener()
 
+    }
+
+    private fun setListener() {
+        toolbar.setOnClickListener { /*startActivity(Intent(this, DeliveryDetailsActivity::class.java))*/ }
     }
 
     override fun onFragmentAttached() {

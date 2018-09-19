@@ -11,6 +11,7 @@ import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.kirana.ui.deliveryDetails.view.DeliveryDetailsActivity
 import com.kirana.ui.login.view.LoginActivity
 import kotlinx.android.synthetic.main.activity_your_favourites.*
 
@@ -74,6 +75,7 @@ class AccountActivity : BaseActivity(), AccountMVPView {
         return if (id == R.id.action_edit) {
             val editMenuItem = menu.findItem(R.id.action_edit)
             showToast("Edit Profile")
+            startActivity(Intent(this, DeliveryDetailsActivity::class.java))
             true
         } else super.onOptionsItemSelected(item)
     }

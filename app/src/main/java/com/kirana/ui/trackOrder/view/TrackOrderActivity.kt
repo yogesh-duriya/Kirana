@@ -83,7 +83,6 @@ class TrackOrderActivity : AppCompatActivity() , OnMapReadyCallback {
 
         // This code adds the listener and subscribes passenger to channel with driver's location.
         try {
-
             val newLocation = HashMap<String, String>()
             newLocation.put("lat", "26.936961") //= JsonUtil.fromJson(message.getMessage().toString(), LinkedHashMap<*, *>::class.java)
             newLocation.put("lng", "75.803016") //= JsonUtil.fromJson(message.getMessage().toString(), LinkedHashMap<*, *>::class.java)
@@ -91,7 +90,6 @@ class TrackOrderActivity : AppCompatActivity() , OnMapReadyCallback {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
 
     }
 

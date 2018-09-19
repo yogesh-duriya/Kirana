@@ -40,7 +40,8 @@
         <activity android:name=".ui.yourFavourites.view.YourFavouritesActivity" />
         <activity android:name=".ui.account.view.AccountActivity" />
         <activity android:name=".ui.cart.view.CartActivity" />
-        <activity android:name=".ui.trackOrder.view.TrackOrderActivity"></activity>
+        <activity android:name=".ui.trackOrder.view.TrackOrderActivity" />
+        <activity android:name=".ui.deliveryDetails.view.DeliveryDetailsActivity"></activity>
     </application>
 
 </manifest>
