@@ -23,7 +23,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            tools:text="Android MVP Architecture" />
+            tools:text="Android MVP Architecture"
+            android:textAppearance="@style/TextAppearance.Text.Regular"/>
 
         <LinearLayout
             android:layout_width="match_parent"

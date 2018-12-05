@@ -25,7 +25,7 @@ class ProductListActivityModule {
     internal fun provideProductListAdapter(): AllShopAdapter = AllShopAdapter(ArrayList())
 
     @Provides
-    internal fun provideGridLayoutManager(fragment: ProductListActivity): LinearLayoutManager = LinearLayoutManager(fragment)
+    internal fun provideGridLayoutManager(context: ProductListActivity): LinearLayoutManager = LinearLayoutManager(context)
 
 
 

@@ -19,6 +19,7 @@ import android.graphics.drawable.LayerDrawable
 import android.view.MenuItem
 import com.kirana.ui.cart.view.CartActivity
 import com.kirana.ui.deliveryDetails.view.DeliveryDetailsActivity
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 
 class MainActivity : BaseActivity(), HasSupportFragmentInjector {
@@ -125,6 +126,10 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         badge.setCount(count)
         icon.mutate()
         icon.setDrawableByLayerId(R.id.ic_group_count, badge)
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
 

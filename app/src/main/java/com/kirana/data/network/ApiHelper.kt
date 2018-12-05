@@ -23,4 +23,8 @@ interface ApiHelper {
 
     fun performAddToCart(method: String, user_id: String, product_id: String): Observable<LoginResponse>
 
+    fun performOtp(method: String, otp: String, userId: String?): Observable<LoginResponse>
+
+    fun getOtp(method: String, currentUserId: String?) : Observable<OtpResponse>
+
 }

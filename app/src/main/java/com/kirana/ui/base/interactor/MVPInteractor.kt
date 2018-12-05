@@ -9,4 +9,6 @@ interface MVPInteractor {
     fun performUserLogout()
 
     fun performFirstTime()
+
+    fun getUserId() : String?
 }

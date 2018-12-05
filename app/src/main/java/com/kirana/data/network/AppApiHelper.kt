@@ -1,17 +1,18 @@
 package com.kirana.data.network
 
+import com.kirana.R.string.otp
+import com.kirana.R.string.surname
 import com.rx2androidnetworking.Rx2AndroidNetworking
 import io.reactivex.Observable
 import javax.inject.Inject
 
 class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHelper {
 
+    val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
 
     override fun performServerLogin(method: String, email: String, password: String, MAC_ID: String): Observable<LoginResponse>{
-
-        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        //val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
        return requestInterface.agentLogin(method, email, password, MAC_ID)
-
     } /*=
             Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_SERVER_LOGIN)
                     .addHeaders(apiHeader.publicApiHeader)
@@ -21,18 +22,18 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
 
     override fun performRegister(method: String, firstName: String, surname: String, email: String, mobile: String, password: String): Observable<LoginResponse> {
 
-        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        //val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
         return requestInterface.register(method, firstName, surname, email, mobile, password)
 
     }
 
     override fun getShopApiCall(): Observable<ShopResponse> {
-        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        //val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
         return requestInterface.getShops("getShops")
     }
 
     override fun performAddToCart(method: String, user_id: String, product_id: String): Observable<LoginResponse> {
-        val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        //val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
         return requestInterface.agentLogin(method,"","","")
     }
 
@@ -67,5 +68,15 @@ class AppApiHelper @Inject constructor(private val apiHeader: ApiHeader) : ApiHe
                     .addHeaders(apiHeader.protectedApiHeader)
                     .build()
                     .getObjectObservable(OpenSourceResponse::class.java)
+
+    override fun performOtp(method: String, otp: String, userId: String?): Observable<LoginResponse> {
+        //val requestInterface = ApiClient.getClient().create(RequestInterface::class.java)
+        return requestInterface.submitOtp("SubmitOTP", otp, userId)
+    }
+
+    override fun getOtp(method: String, userId: String?): Observable<OtpResponse> {
+        return requestInterface.getOtp("GetOTP", userId)
+    }
+
 
 }

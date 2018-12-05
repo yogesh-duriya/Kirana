@@ -41,7 +41,8 @@
         <activity android:name=".ui.account.view.AccountActivity" />
         <activity android:name=".ui.cart.view.CartActivity" />
         <activity android:name=".ui.trackOrder.view.TrackOrderActivity" />
-        <activity android:name=".ui.deliveryDetails.view.DeliveryDetailsActivity"></activity>
+        <activity android:name=".ui.deliveryDetails.view.DeliveryDetailsActivity" />
+        <activity android:name=".ui.otp.view.OtpActivity"></activity>
     </application>
 
 </manifest>

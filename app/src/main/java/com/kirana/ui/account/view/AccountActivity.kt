@@ -51,7 +51,6 @@ class AccountActivity : BaseActivity(), AccountMVPView {
     }
 
     override fun openEditAccountActivity() {
-
     }
 
     override fun setUserInfo(userInfo: HashMap<Int, String>) {
@@ -62,11 +61,11 @@ class AccountActivity : BaseActivity(), AccountMVPView {
         tie_mobile.setText(userInfo.get(R.string.KEY_MOBILE))
     }
 
-        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            getMenuInflater().inflate(R.menu.main_menu, menu);
-            this.menu = menu!!;
-            return true
-        }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        this.menu = menu!!;
+        return true
+    }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.getItemId()

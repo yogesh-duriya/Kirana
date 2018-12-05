@@ -92,6 +92,9 @@ class DeliveryDetailsActivity : AppCompatActivity() {
             val primaryText : String = item?.getPrimaryText(null).toString()
 
             enter_place.setText(primaryText + ", " + item?.getSecondaryText(null).toString())
+            ll_saved_address.visibility = View.VISIBLE
+            tv_primary_address.setText(primaryText)
+            tv_secondary_address.setText(item?.getSecondaryText(null).toString())
 
             Log.i("Autocomplete", "Autocomplete item selected: " + primaryText)
 
@@ -100,10 +103,10 @@ class DeliveryDetailsActivity : AppCompatActivity() {
             placeResult.addOnCompleteListener(object : OnCompleteListener<PlaceBufferResponse> {
                 override fun onComplete(task: Task<PlaceBufferResponse>) {
                     val places = task.getResult();
-                    val place = places.get(0)
+                    val place = places?.get(0)
 
                     isAutoCompleteLocation = true
-                    latLng = place.latLng
+                    latLng = place!!.latLng
                     //assignToMap()
 
                     places.release()

@@ -43,5 +43,9 @@
     <string name="order_receipt">Order receipt</string>
     <string name="close">CLOSE</string>
     <string name="place_order">Place Order</string>
+    <string name="otp_header_title">ENTER YOUR OTP</string>
+    <string name="submit">SUBMIT</string>
+    <string name="resend">Resend OTP</string>
+    <string name="otp">OTP</string>
 
 </resources>

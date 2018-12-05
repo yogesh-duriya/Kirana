@@ -21,4 +21,14 @@ interface RequestInterface {
     @POST(".")
     abstract fun getShops(@Field("Method") method: String): Observable<ShopResponse>
 
+    @FormUrlEncoded
+    @POST(".")
+    abstract fun submitOtp(@Field("Method") method: String, @Field("OTP") OTP: String,
+                           @Field("userId") userId: String?): Observable<LoginResponse>
+
+    @FormUrlEncoded
+    @POST(".")
+    abstract fun getOtp(@Field("Method") method: String, @Field("userId") userId: String?): Observable<OtpResponse>
+
+
 }

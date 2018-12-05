@@ -2,10 +2,8 @@ package com.kirana.ui.productList.view
 
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import com.kirana.R
-import com.kirana.data.network.Product
 import com.kirana.data.network.Shop
 import com.kirana.ui.base.view.BaseActivity
 import com.kirana.ui.main.home.view.AllShopAdapter

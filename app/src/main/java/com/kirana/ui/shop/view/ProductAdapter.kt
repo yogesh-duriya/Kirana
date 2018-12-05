@@ -73,9 +73,9 @@ class ProductAdapter (private val categoryListItems: MutableList<Product>) : Rec
         private fun inflateData(name: String?, id: String?, image: String?, rating: String?, raters: String?, price: String?, offer: String?) {
             name?.let { itemView.tv_name.text = it }
             rating?.let { itemView.tv_rating.text = it }
-            "("+raters+")"?.let { itemView.tv_no_raters.text = it }
-            "Rs."+price?.let { itemView.tv_price.text = it }
-            offer+"% off"?.let { itemView.tv_offer.text = it }
+            ("("+raters+")")?.let { itemView.tv_no_raters.text = it }
+            ("Rs."+price)?.let { itemView.tv_price.text = it }
+            (offer+"% off")?.let { itemView.tv_offer.text = it }
             //id?.let { itemView.tv_rating.text = it }
             //image.let{itemView.iv_cat.setImageResource(it)}
 

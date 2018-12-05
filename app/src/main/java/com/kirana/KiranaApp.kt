@@ -6,6 +6,7 @@ import com.kirana.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 import javax.inject.Inject
 
 class KiranaApp : Application(), HasActivityInjector {
@@ -21,6 +22,11 @@ class KiranaApp : Application(), HasActivityInjector {
                 .application(this)
                 .build()
                 .inject(this)
+
+        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-ThinItalic.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build())
 
     }
 }

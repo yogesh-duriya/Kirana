@@ -116,8 +116,7 @@ class PlacesAdapter(context: Context, resourceId: Int, geoData: GeoDataClient, f
         try {
             val autocompletePredictions = results.getResult()
 
-            Log.i(TAG, "Query completed. Received " + autocompletePredictions.getCount()
-                    + " predictions.")
+            Log.i(TAG, "Query completed. Received " + autocompletePredictions!!.getCount() + " predictions.")
 
             // Freeze the results immutable representation that can be stored safely.
             return DataBufferUtils.freezeAndClose<AutocompletePrediction, AutocompletePrediction>(autocompletePredictions)

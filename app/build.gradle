@@ -88,5 +88,10 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     implementation "com.google.android.gms:play-services-location:15.0.1"
-    compile 'com.google.android.gms:play-services-places:15.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    // font
+    implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
+
 }

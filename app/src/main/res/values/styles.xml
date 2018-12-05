@@ -8,6 +8,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:actionMenuTextColor">@color/black</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <!--<item name="android:screenOrientation">portrait</item>-->
+
     </style>
 
     <style name="AppThemeFullScreen" parent="AppTheme">
@@ -22,18 +25,21 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <!--<item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>-->
+        <item name="android:textViewStyle">@style/TextAppearance.Text.Regular</item>
     </style>
 
     <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
-        <item name="android:fontFamily">sans-serif</item>
         <!--<item name="android:fontFamily">sans-serif</item>-->
+        <!--<item name="fontPath">fonts/font_family_thin</item>-->
+        <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
-    <!--<style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
-        <item name="fontPath">fonts/source-sans-pro/SourceSansPro-Bold.ttf</item>
+    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
+    <!--
     <style name="TextAppearance.Text.Light" parent="android:TextAppearance">
         <item name="fontPath">fonts/source-sans-pro/SourceSansPro-Light.ttf</item>
     </style>
@@ -41,6 +47,10 @@
     <style name="TextAppearance.Text.Italic" parent="android:TextAppearance">
         <item name="fontPath">fonts/source-sans-pro/SourceSansPro-Italic.ttf</item>
     </style>-->
+
+    <style name="TextStyle.EditText" parent="TextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
@@ -115,9 +125,7 @@
         <item name="android:textColor">@color/black_effective</item>
     </style>
 
-    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
+
 
     <style name="TextStyle.Title.Sub" parent="TextStyle.Title">
         <item name="android:textAppearance">@style/TextAppearance.Text.Light</item>

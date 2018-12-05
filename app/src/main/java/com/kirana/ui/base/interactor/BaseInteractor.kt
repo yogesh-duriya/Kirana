@@ -6,7 +6,6 @@ import com.kirana.util.AppConstants
 
 open class BaseInteractor() : MVPInteractor {
 
-
     protected lateinit var preferenceHelper: PreferenceHelper
     protected lateinit var apiHelper: ApiHelper
 
@@ -29,6 +28,8 @@ open class BaseInteractor() : MVPInteractor {
     override fun performFirstTime() = preferenceHelper.let {
         it.setFirstTime("1")
     }
+
+    override fun getUserId() = this.preferenceHelper.getCurrentUserId()
 
 
 }

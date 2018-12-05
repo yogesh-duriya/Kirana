@@ -20,7 +20,6 @@ class OrderFragment : Fragment() {
         }
     }
 
-
     internal lateinit var orderPagerAdapter: OrderPagerAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
